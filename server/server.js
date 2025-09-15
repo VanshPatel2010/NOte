@@ -8,7 +8,7 @@ import authRouter from "./routes/authRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import adminRouter from "./routes/adminRoutes.js";
 const app = express();
-// const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4000;
 connectDB();
 app.use(express.json());
 app.use(cookieParser());
@@ -22,6 +22,4 @@ app.get("/",(req,res) => {res.send("Hello everyone")});
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/admin", adminRouter);
-// app.listen(port, () => console.log(`Server started on port ${port}`));
-module.exports = app;
-
+app.listen(port, () => console.log(`Server started on port ${port}`));
