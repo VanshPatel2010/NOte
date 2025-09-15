@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 import { AppContent } from "../context/AppContext";
-import axios from "axios";
+import axios from "../api/axiosConfig.js";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -40,7 +40,7 @@ const fetchUsers = async (tenants) => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-    axios.defaults.withCredentials = true;
+    // axios.defaults.withCredentials = true;
 
     try {
       if (state === "Sign up") {

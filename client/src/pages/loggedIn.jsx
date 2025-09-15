@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import LogNavbar from "../components/logNavbar";
 import { AppContent } from "../context/AppContext";
-import axios from "axios";
+import axios from "../api/axiosConfig.js";
 import toast from "react-hot-toast";
 
 const Dashboard = () => {
