@@ -58,10 +58,12 @@ const fetchUsers = async (tenants) => {
           toast.error(res.data.message);
         }
       } else {
-        const res = await axios.post(backendURL + "api/auth/login", {
-          email,
-          password,
-        });
+        const res = await axios.post(
+  backendURL + "api/auth/login",
+  { email, password },
+  { withCredentials: true }   // ⬅️ important
+);
+
 
         if (res.data.success) {
           setIsLoggedIn(true);
