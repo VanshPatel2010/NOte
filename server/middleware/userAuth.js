@@ -12,6 +12,7 @@ export const userAuth = async (req, res, next) => {
             
             req.user = { id: decodedtoken.id };
             console.log(req.user);
+            console.log("token id found");
         }
         else{
             console.log("token id not found");
