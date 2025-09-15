@@ -1,0 +1,11 @@
+import express from "express";
+import { getUserData } from "../controllers/userControllers.js";
+import { userAuth } from "../middleware/userAuth.js";
+import { getNotes, addNote, deleteNote, updateNote } from "../controllers/userControllers.js";
+const userRouter = express.Router();
+userRouter.get("/data", userAuth,getUserData);
+userRouter.get("/notes", userAuth, getNotes);
+userRouter.post("/addNote", userAuth, addNote);
+userRouter.delete("/deleteNote/:id", userAuth, deleteNote);
+userRouter.put("/updateNote/:id", userAuth, updateNote);
+export default userRouter;
