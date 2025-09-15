@@ -22,7 +22,7 @@ const Dashboard = () => {
     const fetchNotes = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`${backendURL}/api/user/notes`, {
+        const res = await axios.get(`${backendURL}api/user/notes`, {
           withCredentials: true,
         });
         if (res.data?.success) {
@@ -53,7 +53,7 @@ const Dashboard = () => {
     }
     try {
       const res = await axios.post(
-        `${backendURL}/api/user/addNote`,
+        `${backendURL}api/user/addNote`,
         noteInput, // Send the whole {title, content} object
         { withCredentials: true }
       );
@@ -76,7 +76,7 @@ const Dashboard = () => {
     }
     try {
       const res = await axios.put(
-        `${backendURL}/api/user/updateNote/${editingId}`,
+        `${backendURL}api/user/updateNote/${editingId}`,
         noteInput, // Send the whole {title, content} object
         { withCredentials: true }
       );
@@ -111,7 +111,7 @@ const Dashboard = () => {
     if (!confirm("Delete this note?")) return;
     try {
       const res = await axios.delete(
-        `${backendURL}/api/user/deleteNote/${id}`,
+        `${backendURL}api/user/deleteNote/${id}`,
         {
           withCredentials: true,
         }

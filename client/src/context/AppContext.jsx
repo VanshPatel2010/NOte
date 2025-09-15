@@ -15,7 +15,7 @@ export const AppContextProvider = (props)=>{
         setUserData
     }
     useEffect(() => {
-    fetch(backendURL + "/api/user/data", {
+    fetch(backendURL + "api/user/data", {
       method: "GET",
       credentials: "include" // send cookie along
     })

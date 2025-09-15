@@ -18,7 +18,7 @@ const Login = () => {
 const fetchUsers = async (tenants) => {
   try {
     const groupQuery = `?group=${encodeURIComponent(tenants)}`;
-    const res = await axios.get(`${backendURL}/api/admin/allUsers${groupQuery}`, {
+    const res = await axios.get(`${backendURL}api/admin/allUsers${groupQuery}`, {
       withCredentials: true,
     });
 
@@ -44,7 +44,7 @@ const fetchUsers = async (tenants) => {
 
     try {
       if (state === "Sign up") {
-        const res = await axios.post(backendURL + "/api/auth/register", {
+        const res = await axios.post(backendURL + "api/auth/register", {
           name,
           email,
           password,
@@ -58,7 +58,7 @@ const fetchUsers = async (tenants) => {
           toast.error(res.data.message);
         }
       } else {
-        const res = await axios.post(backendURL + "/api/auth/login", {
+        const res = await axios.post(backendURL + "api/auth/login", {
           email,
           password,
         });

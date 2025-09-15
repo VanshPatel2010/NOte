@@ -17,7 +17,7 @@ const ResetPassword = () => {
   axios.defaults.withCredentials = true;
   try {
     if (state === "otp") {
-      const res = await axios.post(backendURL + "/api/auth/send-reset-otp", {
+      const res = await axios.post(backendURL + "api/auth/send-reset-otp", {
         email
       });
 
@@ -27,7 +27,7 @@ const ResetPassword = () => {
         toast.error(res.data.message);
       }
     } else {
-      const res = await axios.post(backendURL + "/api/auth/reset-password", {
+      const res = await axios.post(backendURL + "api/auth/reset-password", {
         email,
         newPassword,
         otp,

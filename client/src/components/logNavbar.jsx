@@ -16,7 +16,7 @@ const LogNavbar = () => {
     // optional: inform backend to clear server-side session/cookie
     try {
       await axios.post(
-        backendURL + "/api/auth/logout",
+        backendURL + "api/auth/logout",
         {},
         { withCredentials: true }
       );

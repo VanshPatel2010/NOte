@@ -23,7 +23,7 @@ const Admin = () => {
       try {
         const groupQuery = `?group=${encodeURIComponent(userData.tenants)}`;
         const res = await axios.get(
-          `${backendURL}/api/admin/allUsers${groupQuery}`,
+          `${backendURL}api/admin/allUsers${groupQuery}`,
           { withCredentials: true }
         );
 
@@ -48,7 +48,7 @@ const Admin = () => {
     try {
       const newStatus = currentStatus === "free" ? "pro" : "free";
       const res = await axios.put(
-        `${backendURL}/api/admin/updateSubscription/${userId}`,
+        `${backendURL}api/admin/updateSubscription/${userId}`,
         { subscription: newStatus },
         { withCredentials: true }
       );
@@ -71,7 +71,7 @@ const Admin = () => {
   const deleteUser = async (userId) => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
-      const res = await axios.delete(`${backendURL}/api/admin/deleteUser/${userId}`, {
+      const res = await axios.delete(`${backendURL}api/admin/deleteUser/${userId}`, {
         withCredentials: true,
       });
       if (res.data?.success) {
