@@ -10,13 +10,13 @@ import adminRouter from "./routes/adminRoutes.js";
 const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
-app.use(express.json());
-app.use(cookieParser());
 app.use(cors({
   origin: process.env.FRONTEND_URL, // your Vite frontend URL
   credentials: true,               // allow cookies if using withAuth
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 }));
+app.use(cookieParser());
+app.use(express.json());
 
 app.get("/",(req,res) => {res.send("Hello everyone")});
 app.use("/api/auth", authRouter);
